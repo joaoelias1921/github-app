@@ -1,0 +1,33 @@
+@import "styles/variables";
+
+.mainContainer {
+	@include centered();
+	width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+	.mainContainer {
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.mainContainer {
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.mainContainer {
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.mainContainer {
+
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.mainContainer {
+
+	}
+}
