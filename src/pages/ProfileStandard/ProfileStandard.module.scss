@@ -1,0 +1,55 @@
+@import 'styles/variables';
+
+.mainContainer {
+	@include centered();
+	width: 100%;
+	min-height: 100vh;
+    flex-direction: row;
+	background-color: $darker;
+	color: white;
+    .navContainer {
+        @include centered();
+        background-color: $dark;  
+        justify-content: flex-start;
+        min-height: 100%;
+        width: 20%;
+        &__userInfo {
+            @include centered();
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 20% auto;
+            width: 80%;
+            .avatar {
+                width: 80px;
+                border-radius: 40px;
+            }
+        }
+        &__btnContainer {
+            @include centered();
+            width: 100%;
+            .navBtn {
+                width: 100%;
+                margin: 5% auto;
+                padding: 20px;
+                background-color: $dark;
+                color: white;
+                text-align: center;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                transition: 240ms ease-in-out;
+                &:hover {
+                    background-color: $darker;
+                }
+            }
+        }
+    }
+    .dataContainer {
+        @include centered();
+        width: 80%;
+    }
+}
+
+.selected {
+    background: $darker !important;
+}

@@ -11,10 +11,8 @@ export default function StandardPage() {
 	});
 
 	return (
-		<>
-			<section className={styles.mainContainer}>
-				<Outlet />
-			</section>
-		</>
+		<section className={styles.mainContainer}>
+			<Outlet />
+		</section>
 	);
 }

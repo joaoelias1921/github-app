@@ -1,16 +1,9 @@
 @import 'styles/variables';
 
 .mainContainer {
-	display: flex;
-	flex-direction: column;
+	@include centered();
 	width: 100%;
 	min-height: 100vh;
-}
-
-@media screen and (max-width: 1024px) {
-
-}
-
-@media screen and (max-width: 768px) {
-	
+	background-color: $darker;
+	color: white;
 }
