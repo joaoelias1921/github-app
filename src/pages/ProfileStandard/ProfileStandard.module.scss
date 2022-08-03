@@ -32,5 +32,6 @@
     .dataContainer {
         @include centered();
         width: 80%;
+        min-height: 100%;
     }
 }

@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import Logo from "assets/images/github-icon.png";
 import { GithubUserContext } from "common/context/GithubUser";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import api from "services/api";
 import styles from "./Home.module.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 	const {
+		userData,
 		setUserData, 
 		setUserRepos,
 		setUserStarreds,
-	} = useContext(GithubUserContext);
+	} = React.useContext(GithubUserContext);
 	const [user, setUser] = useState("");
 	const [errorActive, setErrorActive] = useState(true);
 	const navigate = useNavigate();
@@ -24,9 +25,9 @@ export default function Home() {
 				await api.get(`users/${user}/repos`)
 					.then(res => setUserRepos(res.data));
 				await api.get(`users/${user}/starred`)
-					.then(res => setUserStarreds(res.data));
+					.then(res => setUserStarreds(res.data));				
 				setErrorActive(true);
-				navigate("/profile");
+				navigate("/profile/info");
 			} catch(err) {
 				console.log(err);
 				setUserData(null);
@@ -42,7 +43,7 @@ export default function Home() {
 			<div className={styles.homeTitle}>
 				<img src={Logo} alt="Github Logo" />
 				<h1 className={styles.homeTitle__title}>Github App</h1>
-				<h3 className={styles.homeTitle__subtitle}>Welcome to the Github App! Type your username or user ID below to start:</h3>
+				<h3 className={styles.homeTitle__subtitle}>Welcome to the Github App! Type your official Github username below to start:</h3>
 			</div>
 			<div className={styles.userInput}>
 				<input 

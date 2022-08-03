@@ -1,0 +1,45 @@
+@import "styles/variables";
+
+.userInfo {
+    @include centered();
+    min-height: 100%;
+    width: 90%;
+    .mainInfo, .secondaryInfo {
+        @include centered();
+        margin-top: 3%;
+        padding: 20px;
+        width: 100%;
+        justify-content: space-evenly;
+        text-align: left;
+        flex-direction: row;
+        border: 1px solid $dark;
+        border-radius: 20px;
+        &__avatar {
+            width: 250px;
+            border-radius: 100%;
+            border: 2px solid $dark;
+        }
+        &__info {
+            h3 {
+                color: $errorColor;
+                span, a {
+                    color: white;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    .secondaryInfo {
+        justify-content: space-between;
+        &__first, &__second {
+            font-size: 0.8rem;
+            h3 {
+                color: $errorColor;
+                span {
+                    color: white;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
