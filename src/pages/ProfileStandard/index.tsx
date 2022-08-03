@@ -2,7 +2,7 @@ import { GithubUserContext } from "common/context/GithubUser";
 import { useContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import styles from "./ProfileStandard.module.scss";
-import classNames from "classnames";
+import NavButton from "components/NavButton";
 
 export default function ProfileStandard() {
     const { userData } = useContext(GithubUserContext);
@@ -29,30 +29,24 @@ export default function ProfileStandard() {
                     <p>Welcome, {userData && userData.login}</p>
                 </div>
                 <div className={styles.navContainer__btnContainer}>
-                    <button
+                    <NavButton 
                         onClick={() => {clearSelections(), setUserSelected(!userSelected)}}
-                        className={classNames({                            
-                            [styles.navBtn]: true,
-                            [styles.selected]: userSelected
-                        })}>
+                        state={userSelected}
+                    >
                         My profile
-                    </button>
-                    <button
+                    </NavButton>
+                    <NavButton 
                         onClick={() => {clearSelections(), setReposSelected(!reposSelected)}}
-                        className={classNames({
-                            [styles.navBtn]: true,
-                            [styles.selected]: reposSelected
-                        })}>
+                        state={reposSelected}
+                    >
                         Repositories
-                    </button>
-                    <button 
+                    </NavButton>
+                    <NavButton 
                         onClick={() => {clearSelections(), setStarredSelected(!starredSelected)}}
-                        className={classNames({
-                            [styles.navBtn]: true,
-                            [styles.selected]: starredSelected
-                        })}>
+                        state={starredSelected}
+                    >
                         Starred repositories
-                    </button>
+                    </NavButton>
                 </div>
             </section>
             <section className={styles.dataContainer}>

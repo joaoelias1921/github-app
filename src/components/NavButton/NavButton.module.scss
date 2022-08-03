@@ -1,0 +1,21 @@
+@import "styles/variables";
+
+.navBtn {
+    width: 100%;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: $dark;
+    color: white;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 240ms ease-in-out;
+    &:hover {
+        background-color: $darker;
+    }
+}
+
+.selected {
+    background: $darker !important;
+}
