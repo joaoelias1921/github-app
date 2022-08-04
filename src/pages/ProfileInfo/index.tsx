@@ -2,6 +2,7 @@ import styles from "./ProfileInfo.module.scss";
 import { GithubUserContext } from "common/context/GithubUser";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "assets/images/github-icon-dark.png";
 
 export default function ProfileInfo() {
     const { userData, setUserData } = useContext(GithubUserContext);
@@ -50,6 +51,11 @@ export default function ProfileInfo() {
                             <h3>Twitter: <span>{userData.twitter_username}</span></h3>
                             <h3>Creation date: <span>{(userData.created_at).split("T")[0]}</span></h3>
                             <h3>Last updated at: <span>{(userData.updated_at).split("T")[0]}</span></h3>
+                        </div>
+                        <div className={styles.secondaryInfo__about}>
+                            <img src={Logo} alt="Github Logo" />
+                            <p>{new Date().getFullYear()} Github, Inc.</p>
+                            <p>All rights reserved</p>
                         </div>
                     </div>
                 </section>

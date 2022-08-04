@@ -1,0 +1,54 @@
+@import "styles/variables";
+
+.userRepos {
+    @include centered();
+    width: 100%;
+    min-height: 100%;
+    h1 {
+        margin: 3% auto;
+    }
+    .allRepos {
+        @include centered();
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 5%;
+        width: 100%;
+        &__repo {
+            @include centered();
+            align-items: flex-start;
+            flex-wrap: wrap;
+            word-wrap: break-word;
+            text-align: left;
+            border: 2px solid $dark;
+            border-radius: 20px;
+            margin-bottom: 3%;
+            padding: 20px;
+            width: 45%;
+            h3 {
+                width: 100%;
+                font-size: 1.2rem;
+                color: $errorColor;
+            }
+            a, p {
+                width: 100%;
+                color: white;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+.noRepo {
+    @include centered();
+    align-items: center;
+    text-align: left;
+    min-height: 100%;
+    width: 55%;
+    h1 {
+        font-size: 6rem;
+        margin: 0;
+        margin-bottom: 5%;
+        align-self: flex-start;
+    }
+}

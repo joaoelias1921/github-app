@@ -1,18 +1,17 @@
 import classNames from "classnames";
 import Logo from "assets/images/github-icon.png";
 import { GithubUserContext } from "common/context/GithubUser";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import api from "services/api";
 import styles from "./Home.module.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 	const {
-		userData,
 		setUserData, 
 		setUserRepos,
 		setUserStarreds,
-	} = React.useContext(GithubUserContext);
+	} = useContext(GithubUserContext);
 	const [user, setUser] = useState("");
 	const [errorActive, setErrorActive] = useState(true);
 	const navigate = useNavigate();
