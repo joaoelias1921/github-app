@@ -1,7 +1,13 @@
 import { GithubUserContext } from "common/context/GithubUser";
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ProfileRepos.module.scss";
+
+type iUserRepos = {
+    name: string,
+    html_url: string,
+    description: string
+}
 
 export default function ProfileRepos() {
     const { userData, userRepos } = useContext(GithubUserContext);
@@ -13,11 +19,11 @@ export default function ProfileRepos() {
 
     return(
         <>
-            {userRepos.length > 0 ?
+            {userRepos && userRepos.length > 0 ?
                 <section className={styles.userRepos}>
                     <h1>My repositories</h1>
                     <div className={styles.allRepos}>
-                        {userRepos.map((repo: any, index: any) => (
+                        {userRepos.map((repo: iUserRepos, index: React.Key) => (
                             <div key={index} className={styles.allRepos__repo}>
                                 <h3>{repo.name}</h3>
                                 <a href={repo.html_url}>{repo.html_url}</a>
