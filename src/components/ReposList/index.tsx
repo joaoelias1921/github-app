@@ -33,7 +33,7 @@ export default function ReposList({ repos, isStarred }: Props) {
         <>
             {repos && repos.length > 0 ?
                 <section className={styles.userRepos}>
-                    <h1>My repositories</h1>
+                    <h1>My {isStarred && "starred"} repositories</h1>
                     <input
                         className={styles.searchInput}
                         type="text"
