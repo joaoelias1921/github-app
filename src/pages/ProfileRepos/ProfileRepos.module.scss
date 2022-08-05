@@ -5,7 +5,20 @@
     width: 100%;
     min-height: 100%;
     h1 {
-        margin: 3% auto;
+        margin: 5% auto;
+    }
+    .searchInput {
+        width: 50%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $dark;
+        color: white;
+        padding: 15px;
+        transition: 240ms ease-in-out;
+        &:hover, &:focus {
+            border-bottom: 1px solid white;
+        }
     }
     .allRepos {
         @include centered();
@@ -28,13 +41,16 @@
             h3 {
                 width: 100%;
                 font-size: 1.2rem;
-                color: $errorColor;
+                color: $mainColor;
             }
             a, p {
                 width: 100%;
                 color: white;
                 font-size: 0.8rem;
             }
+        }
+        &__noMatches {
+            width: 80%
         }
     }
 }
@@ -51,4 +67,8 @@
         margin-bottom: 5%;
         align-self: flex-start;
     }
+}
+
+.invisible {
+    display: none;
 }
