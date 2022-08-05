@@ -30,7 +30,7 @@ export default function ProfileInfo() {
                         <div className={styles.mainInfo__info}>
                             <h3>Github User: <span>{userData.login}</span></h3>
                             <h3>User ID: <span>{userData.id}</span></h3>
-                            <h3>Profile on Github: <a href={userData.html_url}>{userData.html_url}</a></h3>
+                            <h3>Profile on Github: <a target="_blank" href={userData.html_url}>{userData.html_url}</a></h3>
                             <h3>Public Repositories: <span>{userData.public_repos}</span></h3>                            
                             <h3>Followers: <span>{userData.followers}</span></h3>
                             <h3>Following: <span>{userData.following}</span></h3>

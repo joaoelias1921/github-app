@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 	const {
-		setUserData, 
+		setUserData,
 		setUserRepos,
 		setUserStarreds,
 	} = useContext(GithubUserContext);

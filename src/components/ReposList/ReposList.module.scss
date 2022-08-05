@@ -37,7 +37,19 @@
             border-radius: 20px;
             margin-bottom: 3%;
             padding: 20px;
+            min-height: 30vh;
             width: 45%;
+            .titleContainer {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .invisible {
+                display: none;
+                background-color: red;
+            }
             h3 {
                 width: 100%;
                 font-size: 1.2rem;
@@ -66,9 +78,6 @@
         margin: 0;
         margin-bottom: 5%;
         align-self: flex-start;
+        color: $mainColor;
     }
-}
-
-.invisible {
-    display: none;
 }
