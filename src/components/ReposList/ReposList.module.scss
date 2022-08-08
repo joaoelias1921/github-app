@@ -45,9 +45,9 @@
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
-            }
-            .invisible {
-                display: none;
+                .invisible {
+                    display: none;
+                }
             }
             h3 {
                 width: 100%;
@@ -78,5 +78,36 @@
         margin-bottom: 5%;
         align-self: flex-start;
         color: $mainColor;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .userRepos {
+        h1 {
+            margin: 10% auto;
+        }
+        .searchInput {
+            width: 80%;
+        }
+        .allRepos {
+            flex-direction: column;
+            &__repo {
+                width: 100%;
+                margin: 3% auto;
+            }
+        }
+    }
+
+    .noRepo {
+        width: 80%;
+        margin: 5% auto;
+        text-align: center;
+        h1 {
+            font-size: 6rem;
+            align-self: center;
+        }
+        h2 {
+            font-size: 1rem;
+        }
     }
 }

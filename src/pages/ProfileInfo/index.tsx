@@ -26,7 +26,9 @@ export default function ProfileInfo() {
             {userData &&
                 <section onLoad={convertUserData} className={styles.userInfo}>
                     <div className={styles.mainInfo}>
-                        <img className={styles.mainInfo__avatar} src={userData.avatar_url} alt="User Avatar" />
+                        <div className={styles.mainInfo__avatar}>
+                            <img src={userData.avatar_url} alt="User Avatar" />
+                        </div>
                         <div className={styles.mainInfo__info}>
                             <h3>Github User: <span>{userData.login}</span></h3>
                             <h3>User ID: <span>{userData.id}</span></h3>

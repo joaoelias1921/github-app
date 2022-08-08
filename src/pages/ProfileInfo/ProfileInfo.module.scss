@@ -15,11 +15,16 @@
         border: 1px solid $dark;
         border-radius: 20px;
         &__avatar {
-            width: 250px;
-            border-radius: 100%;
-            border: 2px solid $dark;
+            @include centered();
+            width: 40%;
+            img {
+                width: 250px;
+                border-radius: 100%;
+                border: 2px solid $dark;
+            }
         }
         &__info {
+            width: 50%;
             border-left: 5px solid $mainColor;
             padding-left: 20px;
             h3 {
@@ -56,6 +61,57 @@
                 font-size: 0.7rem;
                 color: lightgray;
                 margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .userInfo {
+        .mainInfo{
+            flex-direction: column;
+            &__avatar, &__info {
+                width: 100%;
+                margin: 3% auto;
+            }
+        }
+        .secondaryInfo {
+            flex-direction: column;
+            &__first, &__second, &__about {
+                width: 100%;
+                margin: 3% auto;
+            }
+            &__about {
+                img {
+                    margin-bottom: 2%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 425px) {
+    .userInfo {
+        margin: 5% auto;
+        .mainInfo{
+            &__avatar {
+                img {
+                    width: 200px;
+                }
+            }
+            &__info {
+                border: none;
+                padding: 0;
+                word-wrap: break-word;
+            }
+        }
+        .secondaryInfo {
+            &__first, &__second {
+                border: none;
+                padding: 0;
+                word-wrap: break-word;
+            }
+            &__about {
+                margin: 10% auto;
             }
         }
     }

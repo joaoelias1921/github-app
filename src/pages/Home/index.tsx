@@ -13,7 +13,7 @@ export default function Home() {
 		setUserStarreds,
 	} = useContext(GithubUserContext);
 	const [user, setUser] = useState("");
-	const [errorActive, setErrorActive] = useState(true);
+	const [errorActive, setErrorActive] = useState(false);
 	const navigate = useNavigate();
 
 	const provideUser = async () => {
@@ -25,14 +25,14 @@ export default function Home() {
 					.then(res => setUserRepos(res.data));
 				await api.get(`users/${user}/starred`)
 					.then(res => setUserStarreds(res.data));				
-				setErrorActive(true);
+				setErrorActive(false);
 				navigate("/profile/info");
 			} catch(err) {
 				console.log(err);
 				setUserData(null);
 				setUserRepos(null);
 				setUserStarreds(null);
-				setErrorActive(false);
+				setErrorActive(true);
 			}
 		}
 	}
@@ -53,7 +53,7 @@ export default function Home() {
 				<p 
 					className={classNames({
 						[styles.userInput__error]: true,
-						[styles.invisible]: errorActive
+						[styles.invisible]: !errorActive
 					})}
 				>
 					Oops, something went wrong, please try again!

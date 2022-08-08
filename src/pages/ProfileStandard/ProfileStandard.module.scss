@@ -35,3 +35,33 @@
         min-height: 100%;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .mainContainer {
+        .navContainer {
+            &__userInfo {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .mainContainer {
+        flex-direction: column;
+        height: 100%;
+        .navContainer {
+            width: 100%;
+            &__userInfo {
+                margin: 8% auto;
+                .avatar {
+                    width: 100px;
+                    border-radius: 50px;
+                }
+            }
+        }
+        .dataContainer {
+            width: 100%;
+        }
+    }
+}
